@@ -1,0 +1,356 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    border: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: #eff4f6;
+}
+
+.container {
+    max-width: 1400px;
+    width: 95%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header__nav {
+    border-bottom: 2px solid #6d9886;
+    padding: 23px;
+    align-items: center;
+}
+
+.search-form {
+    position: relative;
+    margin-left: 100px;
+    display: flex;
+    align-items: center;
+    /* Aligns child elements (icon and input) vertically */
+    padding-right: 160px;
+}
+
+.search-form input {
+    padding: 10px 40px;
+    /* Leave space for the icon */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px;
+    transition: border-color 0.3s;
+    font-size: 16px;
+    /* Ensure consistent text alignment */
+}
+
+.search-form input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.search-form .icon {
+    position: absolute;
+    left: 10px;
+    /* Position inside input field */
+    top: 50%;
+    /* Center vertically */
+    transform: translateY(-50%);
+    height: 16px;
+    /* Adjust to fit icon size */
+    width: 16px;
+    /* Adjust to fit icon size */
+    pointer-events: none;
+    /* Prevent interaction with the icon */
+}
+
+.search-form button {
+    display: none;
+    /* Keep the button hidden */
+}
+
+.burger {
+    display: none;
+    visibility: hidden;
+}
+
+.header__nav-list {
+    display: flex;
+    gap: 50px;
+}
+
+.nav__list-item {
+    font-family: system-ui;
+    font-weight: 700;
+    font-size: 18px;
+    color: #333333;
+    transition: .3s;
+    position: relative;
+}
+
+.nav__list-item::after {
+    content: "";
+    position: absolute;
+    background: #9333ea;
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: -5px;
+    transition: .3s;
+
+}
+
+.nav__list-item:hover::after {
+    width: 100%;
+}
+
+.nav__list-item:hover {
+    color: #9333ea;
+}
+
+.active {
+    color: #9333ea;
+}
+
+.main {
+    margin-top: 80px;
+}
+
+.quote-text {
+    flex: 1;
+    color: #333;
+    font-size: 56px;
+    font-style: italic;
+    line-height: 1.4;
+    position: relative;
+    margin-right: 60px;
+}
+
+.quote-mark {
+    font-size: 150px;
+    font-style: normal;
+    color: #e3c69a;
+    position: absolute;
+    top: -70px;
+    left: -7px;
+}
+
+.quote-author {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #555;
+    font-size: 36px;
+    font-style: normal;
+}
+
+.quote-image {
+    flex-shrink: 0;
+}
+
+.quote-image img {
+    width: 450px;
+    height: auto;
+    border-radius: 8%;
+    object-fit: cover;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    filter: brightness(1.1);
+}
+
+.quote-text p {
+    padding: 40px 0 0 10px;
+}
+
+.latest-articles {
+    margin-top: 120px;
+    cursor: pointer;
+    margin: 80px auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.latest-articles h2 {
+    width: 100%;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.articles-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.articles-list {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    gap: 20px;
+}
+
+.article-card {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    border: 2px solid #5bb69060;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+    max-height: 280px;
+    text-decoration: none;
+}
+
+.article-card:hover {
+    transform: translateY(-4px);
+}
+.article-card2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 79%;
+    border: 2px solid #5bb69060;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+    max-height: 280px;
+    text-decoration: none;
+}
+
+.article-card2:hover {
+    transform: translateY(-4px);
+}
+
+
+.article-image-container {
+    grid-column: span 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    /* Ensure the image covers the container */
+}
+
+
+.article-content {
+    margin-left: 10px;
+    padding: 15px;
+    flex: 1;
+    grid-column: span 3;
+}
+
+.article-title {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.article-meta {
+    font-size: 14px;
+    color: #777;
+    margin: 10px 0;
+}
+
+.article-description {
+    font-size: 16px;
+    color: #555;
+    overflow: hidden;
+
+}
+
+.categories {
+    padding-left: 50px;
+    max-width: 300px;
+
+}
+
+.categories-list {
+    gap: 9px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.category-tag {
+    border: 2px solid #6d9886;
+    color: #6d9886;
+    border-radius: 10px;
+    padding: 8px 16px;
+}
+
+.article-image-container {
+    background: url('../images/1.png') center / cover;
+}
+
+.quote-image {
+    background: url('../images/ibn_sino.jpg') center / cover;
+    width: 450px;
+    height: 508px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.footer {
+    background: white;
+    padding: 35px 0;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer h4 {
+    color: #27c0ac;
+    margin: 30px 0;
+    position: relative;
+}
+
+.footer h4::after {
+    content: "";
+    position: absolute;
+    background: #9333ea;
+    height: 2px;
+    width: 37%;
+    left: 0;
+    bottom: -5px;
+}
+
+.footer ul li {
+    margin: 10px 0;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 19px;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #9333ea;
+    /* Same teal color for hover effect */
+    font-weight: 900;
+}
+.footer .third{
+    display: flex;
+    gap: 20px;
+}
+.articles-container{
+    margin-bottom: 40px;
+}
+.article-title2{
+    font-size: 10px;
+}
+.maqola{
+    margin-top: 30px;
+}
